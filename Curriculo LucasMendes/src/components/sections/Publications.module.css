@@ -1,0 +1,238 @@
+.pubSection {
+  background: var(--bg-0);
+}
+
+/* Estatísticas */
+.statsRow {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.statBox {
+  flex: 1;
+  min-width: 130px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-xl);
+  padding: 18px 20px;
+  text-align: center;
+  transition: border-color var(--t), box-shadow var(--t);
+}
+.statBox:hover {
+  border-color: var(--border-2);
+  box-shadow: var(--shadow-accent);
+}
+
+.statNum {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.statLbl {
+  font-size: 0.78rem;
+  color: var(--text-300);
+  font-weight: 500;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--r-lg);
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 1px solid var(--border-1);
+  color: var(--text-200);
+  cursor: pointer;
+  transition: color var(--t), border-color var(--t);
+  overflow: hidden;
+}
+.tab:hover      { color: var(--accent); border-color: var(--border-2); }
+.tab.tabActive  { color: var(--accent); border-color: var(--border-3); }
+
+.tabIndicator {
+  position: absolute;
+  inset: 0;
+  background: var(--accent-soft);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.tabCount {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--border-2);
+  padding: 1px 7px;
+  border-radius: var(--r-full);
+}
+
+/* Grid de cards */
+.grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Card base */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-xl);
+  padding: 22px 26px;
+  transition: border-color var(--t), box-shadow var(--t), transform var(--t);
+  cursor: default;
+}
+.card:hover {
+  border-color: var(--border-2);
+  box-shadow: var(--shadow-accent);
+}
+
+.cardAbstract {
+  border-left: 3px solid var(--border-2);
+  transition: border-left-color var(--t), border-color var(--t), box-shadow var(--t), transform var(--t);
+}
+.cardAbstract:hover { border-left-color: var(--accent); }
+
+/* Header do card */
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.yearBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-300);
+  background: var(--bg-1);
+  border: 1px solid var(--border-1);
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+}
+
+.typeBadge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  border: 1px solid;
+}
+
+/* Título */
+.cardTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-100);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.cardTitleEn {
+  font-size: 0.82rem;
+  color: var(--text-300);
+  font-style: italic;
+  margin-bottom: 10px;
+  line-height: 1.45;
+}
+
+/* Autores */
+.authors {
+  font-size: 0.82rem;
+  color: var(--text-300);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.authorHighlight {
+  color: var(--accent);
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Meta */
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+  color: var(--text-300);
+}
+
+.journal { color: var(--text-200); font-weight: 600; }
+.metaDot { color: var(--border-3); }
+
+/* Cap. de livro */
+.chapterBook {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  background: var(--bg-1);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-md);
+  padding: 12px 14px;
+  margin-top: 4px;
+}
+
+.bookIcon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+.bookTitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-200);
+  line-height: 1.45;
+  margin-bottom: 3px;
+}
+
+.bookMeta {
+  font-size: 0.75rem;
+  color: var(--text-300);
+  line-height: 1.5;
+}
+
+/* Responsivo */
+@media (max-width: 700px) {
+  .statsRow { gap: 10px; }
+  .statBox  { padding: 14px 12px; min-width: 100px; }
+  .statNum  { font-size: 1.6rem; }
+}
+
+@media (max-width: 600px) {
+  .tabs     { gap: 6px; }
+  .tab      { padding: 8px 12px; font-size: 0.82rem; }
+  .statsRow { flex-direction: column; }
+  .card     { padding: 16px 16px; }
+  .chapterBook { padding: 10px 12px; }
+}
+
+@media (max-width: 480px) {
+  .tab      { width: 100%; justify-content: space-between; }
+  .card     { padding: 14px 14px; }
+  .cardTitle { font-size: 0.88rem; }
+}

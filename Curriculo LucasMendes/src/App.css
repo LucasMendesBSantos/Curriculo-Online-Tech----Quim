@@ -1,0 +1,5 @@
+/* App-level resets — as regras específicas estão em cada module.css */
+main {
+  position: relative;
+  z-index: 1;
+}

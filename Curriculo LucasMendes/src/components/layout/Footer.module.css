@@ -1,0 +1,44 @@
+.footer {
+  background: var(--bg-1);
+  border-top: 1px solid var(--border-1);
+  padding: 48px 0;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-100);
+}
+.name span {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.roles {
+  font-size: 0.85rem;
+  color: var(--text-300);
+}
+
+.divider {
+  width: 48px;
+  height: 1px;
+  background: var(--border-2);
+  margin: 12px 0;
+}
+
+.copy {
+  font-size: 0.8rem;
+  color: var(--text-400);
+}

@@ -1,0 +1,319 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  overflow-x: hidden; /* só bloqueia overflow horizontal; evita clip vertical do conteúdo */
+}
+
+/* Radial gradient de fundo */
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 60% at 60% 50%, rgba(0,207,255,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(0,100,200,0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ─── Conteúdo esquerdo ─── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--border-2);
+  padding: 6px 16px;
+  border-radius: var(--r-full);
+  margin-bottom: 24px;
+}
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+.greeting {
+  font-size: 1.05rem;
+  color: var(--text-300);
+  margin-bottom: 4px;
+}
+
+.name {
+  font-size: clamp(2.4rem, 5vw, 3.9rem);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  margin-bottom: 22px;
+  color: var(--text-100);
+}
+
+.nameAccent {
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent) 50%, var(--accent-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.typewriterWrap {
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 600;
+  color: var(--text-200);
+  min-height: 2.2rem;
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+.typewriterLabel { color: var(--text-300); margin-right: 6px; }
+
+.typewriterText {
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--accent);
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: blink 0.85s infinite;
+  box-shadow: 0 0 6px var(--accent);
+}
+
+.bio {
+  font-size: 1.02rem;
+  color: var(--text-200);
+  line-height: 1.78;
+  max-width: 540px;
+  margin-bottom: 40px;
+}
+
+.cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ─── Coluna foto ─── */
+.photoCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-bottom: 54px; /* espaço para o statsCard absoluto */
+}
+
+/* Orbs orbitando */
+.orb {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  margin-top: -18px;
+  margin-left: -18px;
+  animation: orbSingle var(--orb-duration, 8s) linear var(--orb-delay, 0s) infinite;
+}
+
+@keyframes orbSingle {
+  from {
+    transform: rotate(var(--orb-start, 0deg)) translateX(var(--orb-radius, 130px)) rotate(calc(-1 * var(--orb-start, 0deg)));
+  }
+  to {
+    transform: rotate(calc(var(--orb-start, 0deg) + 360deg)) translateX(var(--orb-radius, 130px)) rotate(calc(-1 * (var(--orb-start, 0deg) + 360deg)));
+  }
+}
+
+/* Foto card 3D */
+.photoCard {
+  position: relative;
+  width: 300px;
+  height: 360px;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  border: 2px solid var(--border-2);
+  background: var(--bg-card);
+  box-shadow: var(--shadow-md), 0 0 60px var(--accent-glow);
+  cursor: pointer;
+  will-change: transform;
+}
+
+.glowRing {
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, var(--accent), transparent, var(--accent-dark), transparent, var(--accent));
+  z-index: -1;
+  animation: spin 6s linear infinite;
+  opacity: 0;
+  transition: opacity var(--t);
+}
+.photoCard:hover .glowRing { opacity: 0.6; }
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform var(--t-slow);
+}
+.photoCard:hover .photo { transform: scale(1.05); }
+
+.photoFallback {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  height: 100%;
+  color: var(--text-300);
+  font-size: 0.85rem;
+}
+
+/* Stats flutuantes */
+.statsCard {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-xl);
+  padding: 12px 24px;
+  display: flex;
+  gap: 24px;
+  box-shadow: var(--shadow-md), 0 0 24px var(--accent-glow);
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.statItem { text-align: center; }
+.statNum {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent-light), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.statLabel {
+  font-size: 0.7rem;
+  color: var(--text-300);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Scroll indicator */
+.scrollIndicator {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  opacity: 0.4;
+  transition: opacity var(--t);
+}
+.scrollIndicator:hover { opacity: 0.8; }
+
+.scrollMouse {
+  width: 24px;
+  height: 38px;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  padding-top: 6px;
+}
+.scrollDot {
+  width: 4px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 2px;
+  animation: blink 1.5s ease infinite;
+}
+
+/* ─── Responsivo ─── */
+@media (max-width: 960px) {
+  .hero {
+    align-items: flex-start; /* evita clip quando conteúdo > viewport height */
+    padding-top: 100px;
+    padding-bottom: 60px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+    text-align: center;
+  }
+  .photoCol {
+    order: -1;
+    padding-bottom: 64px; /* espaço para statsCard absoluto */
+  }
+  .bio      { max-width: 100%; }
+  .typewriterWrap { max-width: 100%; justify-content: center; }
+  .cta      { justify-content: center; }
+  .photoCard { width: 260px; height: 310px; }
+  .statsCard { padding: 10px 18px; gap: 16px; }
+}
+
+@media (max-width: 600px) {
+  .hero { padding-top: 88px; padding-bottom: 48px; }
+  .grid { gap: 48px; }
+  .photoCard  { width: 230px; height: 280px; }
+  .statsCard  { gap: 12px; padding: 8px 14px; }
+  .statNum    { font-size: 1.2rem; }
+  .statLabel  { font-size: 0.62rem; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding-top: 80px; padding-bottom: 40px; }
+  .grid { gap: 40px; }
+  .photoCard  { width: 200px; height: 250px; }
+  .photoCol   { padding-bottom: 56px; }
+  .cta        { flex-direction: column; align-items: stretch; }
+  .orb        { display: none; }
+  .statsCard  {
+    gap: 10px;
+    padding: 8px 12px;
+    white-space: normal;
+  }
+  .statNum    { font-size: 1.1rem; }
+  .statLabel  { font-size: 0.6rem; }
+}
+
+@media (max-width: 360px) {
+  .photoCard  { width: 175px; height: 220px; }
+  .name       { font-size: clamp(2rem, 8vw, 2.4rem); }
+}

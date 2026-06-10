@@ -1,0 +1,91 @@
+/* ================================================================
+   DESIGN TOKENS — modo Tech (azul, padrão)
+================================================================ */
+:root,
+[data-theme="tech"] {
+  --bg-0:    #010d1a;
+  --bg-1:    #061426;
+  --bg-2:    #0a1d38;
+  --bg-3:    #0e2548;
+  --bg-card: #0b1b30;
+  --bg-card-hover: #102038;
+  --bg-nav:  rgba(1, 13, 26, 0.82);
+
+  --accent:       #00cfff;
+  --accent-light: #44dfff;
+  --accent-dark:  #008fba;
+  --accent-glow:  rgba(0, 207, 255, 0.28);
+  --accent-soft:  rgba(0, 207, 255, 0.08);
+  --accent-mid:   rgba(0, 207, 255, 0.18);
+
+  --text-100: #eef6fc;
+  --text-200: #9cc4dc;
+  --text-300: #4f7a96;
+  --text-400: #2a4a60;
+
+  --border-1: rgba(0, 207, 255, 0.10);
+  --border-2: rgba(0, 207, 255, 0.22);
+  --border-3: rgba(0, 207, 255, 0.50);
+  --border-4: rgba(0, 207, 255, 0.80);
+
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg:   14px;
+  --r-xl:   20px;
+  --r-2xl:  28px;
+  --r-full: 9999px;
+
+  --shadow-sm:       0 2px 8px  rgba(0,0,0,0.35);
+  --shadow-md:       0 6px 24px rgba(0,0,0,0.45);
+  --shadow-lg:       0 16px 48px rgba(0,0,0,0.55);
+  --shadow-accent:   0 0 40px rgba(0, 207, 255, 0.18);
+  --shadow-accent-lg:0 0 80px rgba(0, 207, 255, 0.25);
+
+  --t-fast: 0.15s ease;
+  --t:      0.30s ease;
+  --t-slow: 0.55s ease;
+
+  --font-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --z-particles: 0;
+  --z-content:   1;
+  --z-overlay:   10;
+  --z-nav:       100;
+}
+
+/* ================================================================
+   DESIGN TOKENS — modo Química (verde esmeralda)
+================================================================ */
+[data-theme="chem"] {
+  --bg-0:    #020f06;
+  --bg-1:    #051a0c;
+  --bg-2:    #082315;
+  --bg-3:    #0b2e1c;
+  --bg-card: #071812;
+  --bg-card-hover: #0c2219;
+  --bg-nav:  rgba(2, 15, 6, 0.85);
+
+  --accent:       #00c98a;
+  --accent-light: #34dba6;
+  --accent-dark:  #009663;
+  --accent-glow:  rgba(0, 201, 138, 0.28);
+  --accent-soft:  rgba(0, 201, 138, 0.08);
+  --accent-mid:   rgba(0, 201, 138, 0.18);
+
+  --text-100: #e8f7f0;
+  --text-200: #80c9a4;
+  --text-300: #3d7a5c;
+  --text-400: #1e4433;
+
+  --border-1: rgba(0, 201, 138, 0.10);
+  --border-2: rgba(0, 201, 138, 0.22);
+  --border-3: rgba(0, 201, 138, 0.50);
+  --border-4: rgba(0, 201, 138, 0.80);
+
+  --shadow-sm:        0 2px 8px  rgba(0,0,0,0.40);
+  --shadow-md:        0 6px 24px rgba(0,0,0,0.50);
+  --shadow-lg:        0 16px 48px rgba(0,0,0,0.60);
+  --shadow-accent:    0 0 40px rgba(0, 201, 138, 0.18);
+  --shadow-accent-lg: 0 0 80px rgba(0, 201, 138, 0.25);
+}

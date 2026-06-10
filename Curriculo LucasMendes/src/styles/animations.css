@@ -1,0 +1,109 @@
+/* ================================================================
+   KEYFRAME ANIMATIONS
+================================================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(1.4); }
+}
+
+@keyframes glow-ring {
+  0%   { box-shadow: 0 0 20px var(--accent-glow), 0 0 60px transparent; }
+  50%  { box-shadow: 0 0 40px var(--accent-glow), 0 0 100px var(--accent-glow); }
+  100% { box-shadow: 0 0 20px var(--accent-glow), 0 0 60px transparent; }
+}
+
+@keyframes gradient-border {
+  0%   { background-position: 0%   50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0%   50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes orbit {
+  from { transform: rotate(0deg)   translateX(120px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+@keyframes orbitReverse {
+  from { transform: rotate(0deg)   translateX(155px) rotate(0deg); }
+  to   { transform: rotate(-360deg) translateX(155px) rotate(360deg); }
+}
+
+@keyframes progress-fill {
+  from { width: 0; }
+  to   { width: var(--target-width, 100%); }
+}
+
+@keyframes counter-up {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes noise {
+  0%   { transform: translate(0,0);   }
+  10%  { transform: translate(-2%,-3%); }
+  20%  { transform: translate(-4%, 2%); }
+  30%  { transform: translate(3%,-1%); }
+  40%  { transform: translate(-1%, 4%); }
+  50%  { transform: translate(4%, 1%); }
+  60%  { transform: translate(-2%, 3%); }
+  70%  { transform: translate(3%, -4%); }
+  80%  { transform: translate(-3%, 1%); }
+  90%  { transform: translate(2%,-2%); }
+  100% { transform: translate(0,0); }
+}
+
+@keyframes draw-line {
+  from { height: 0; }
+  to   { height: 100%; }
+}

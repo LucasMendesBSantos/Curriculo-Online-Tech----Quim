@@ -1,0 +1,219 @@
+/* Company card */
+.companyCard {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-xl);
+  padding: 24px 32px;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+
+.companyLogo {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+  border-radius: var(--r-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #010d1a;
+  flex-shrink: 0;
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+
+.companyInfo { flex: 1; min-width: 200px; }
+.companyInfo h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.companyRole { font-size: 0.9rem; font-weight: 500; color: var(--text-200); }
+.companyMeta { font-size: 0.85rem; color: var(--text-300); }
+
+.companyBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #22c55e;
+  background: rgba(34,197,94,0.08);
+  border: 1px solid rgba(34,197,94,0.2);
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+}
+
+.pulse {
+  width: 7px;
+  height: 7px;
+  background: #22c55e;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent) 0%, rgba(0,207,255,0.1) 100%);
+}
+
+.timelineItem {
+  position: relative;
+}
+
+/* Dot */
+.dot {
+  position: absolute;
+  left: -40px;
+  top: 24px;
+  width: 22px;
+  height: 22px;
+  background: var(--bg-0);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  z-index: 1;
+  cursor: pointer;
+  transition: background var(--t), box-shadow var(--t);
+}
+.dot:hover, .dot.dotActive {
+  background: var(--accent-soft);
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+/* Card */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-xl);
+  padding: 24px 28px;
+  cursor: pointer;
+  transition: border-color var(--t), box-shadow var(--t);
+  margin-bottom: 16px;
+}
+.card:hover { border-color: var(--border-2); box-shadow: var(--shadow-accent); }
+.card.cardOpen {
+  border-color: var(--border-3);
+  box-shadow: var(--shadow-accent);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cardTitleGroup { flex: 1; min-width: 0; }
+.cardTitle {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: var(--text-100);
+}
+.cardSubtitle {
+  font-size: 0.85rem;
+  color: var(--text-300);
+}
+
+.cardRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: var(--r-full);
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+.chevron {
+  font-size: 0.65rem;
+  color: var(--text-300);
+  display: inline-block;
+}
+
+/* Body expandido */
+.cardBody { padding-top: 20px; }
+
+.highlight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--border-2);
+  padding: 8px 14px;
+  border-radius: var(--r-md);
+  margin-bottom: 16px;
+}
+.highlightIcon { font-size: 0.9rem; }
+
+.description {
+  font-size: 0.92rem;
+  color: var(--text-200);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-300);
+  background: var(--bg-1);
+  border: 1px solid var(--border-1);
+  padding: 4px 12px;
+  border-radius: var(--r-md);
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .timeline { padding-left: 32px; }
+  .dot { left: -28px; width: 18px; height: 18px; }
+  .timelineLine { left: 14px; }
+  .companyCard { padding: 16px 18px; gap: 14px; }
+  .card { padding: 18px 18px; }
+  .cardRight { flex-wrap: wrap; gap: 8px; }
+}
+
+@media (max-width: 400px) {
+  .timeline { padding-left: 26px; }
+  .dot { left: -22px; width: 16px; height: 16px; font-size: 0.5rem; }
+  .timelineLine { left: 12px; }
+  .companyCard { padding: 14px 14px; flex-direction: column; align-items: flex-start; }
+  .card { padding: 14px 14px; }
+}

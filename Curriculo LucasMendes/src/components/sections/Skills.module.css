@@ -1,0 +1,137 @@
+.skills {}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 18px;
+  border-radius: var(--r-lg);
+  font-size: 0.88rem;
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 1px solid var(--border-1);
+  color: var(--text-200);
+  cursor: pointer;
+  transition: color var(--t), border-color var(--t), background var(--t);
+  overflow: hidden;
+}
+.tab:hover { color: var(--accent); border-color: var(--border-2); }
+.tab.tabActive { color: var(--accent); border-color: var(--border-3); }
+
+.tabIndicator {
+  position: absolute;
+  inset: 0;
+  background: var(--accent-soft);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 60px;
+}
+
+/* Skill card */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-xl);
+  padding: 22px 24px;
+  cursor: default;
+  transition: border-color var(--t), box-shadow var(--t);
+}
+.card:hover {
+  border-color: var(--border-2);
+  box-shadow: var(--shadow-accent), var(--shadow-sm);
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.cardIcon { font-size: 1.3rem; }
+
+.cardName {
+  flex: 1;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-100);
+}
+
+.cardLevel {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+/* Barra de progresso */
+.barTrack {
+  height: 4px;
+  background: var(--border-1);
+  border-radius: var(--r-full);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent), var(--accent-light));
+  border-radius: var(--r-full);
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Seção de todas */
+.allSection {
+  padding: 36px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-1);
+  border-radius: var(--r-2xl);
+}
+
+.allTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-300);
+  margin-bottom: 20px;
+}
+
+.allChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  font-size: 0.83rem;
+  font-weight: 500;
+  color: var(--text-200);
+  background: var(--bg-1);
+  border: 1px solid var(--border-1);
+  padding: 6px 14px;
+  border-radius: var(--r-full);
+  cursor: default;
+  transition: border-color var(--t), color var(--t), background var(--t);
+}
+.chip:hover { color: var(--accent); background: var(--accent-soft); }
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .allSection { padding: 22px; }
+}
