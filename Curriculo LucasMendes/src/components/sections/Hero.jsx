@@ -26,15 +26,15 @@ const TECH_ORBS = ['⚛️', '🟨', '🌐', '🟢', '⚙️', '🎨'];
 const CHEM_ORBS = ['⚗️', '🔬', '🧪', '⚡', '🧬', '📊'];
 
 const TECH_STATS = [
-  { num: '4+',  label: 'Projetos'  },
-  { num: '15+', label: 'Skills'    },
-  { num: '2+',  label: 'Anos'      },
+  { num: '4+', label: 'Projetos' },
+  { num: '15+', label: 'Skills' },
+  { num: '2+', label: 'Anos' },
 ];
 
 const CHEM_STATS = [
-  { num: '4',   label: 'ISO Normas' },
-  { num: 'BBT', label: 'Six Sigma'  },
-  { num: '2022', label: 'Harvard'   },
+  { num: '4', label: 'ISO Normas' },
+  { num: 'BPF', label: 'Alimentos' },
+  { num: '2023', label: 'Exp' },
 ];
 
 const containerVariants = {
@@ -42,7 +42,7 @@ const containerVariants = {
   visible: { transition: { staggerChildren: 0.12 } },
 };
 const itemVariants = {
-  hidden:  { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 28 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
 };
 
@@ -51,7 +51,7 @@ export default function Hero() {
   const isChem = mode === 'chem';
 
   const roles = isChem ? CHEM_ROLES : TECH_ROLES;
-  const orbs  = isChem ? CHEM_ORBS  : TECH_ORBS;
+  const orbs = isChem ? CHEM_ORBS : TECH_ORBS;
   const stats = isChem ? CHEM_STATS : TECH_STATS;
 
   const typed = useTypewriter(roles);
@@ -61,11 +61,11 @@ export default function Hero() {
   function handleMouseMove(e) {
     const rect = cardRef.current?.getBoundingClientRect();
     if (!rect) return;
-    const cx = rect.left + rect.width  / 2;
-    const cy = rect.top  + rect.height / 2;
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
     setTilt({
       x: ((e.clientY - cy) / rect.height) * 12,
-      y: ((e.clientX - cx) / rect.width)  * -12,
+      y: ((e.clientX - cx) / rect.width) * -12,
     });
   }
   function handleMouseLeave() { setTilt({ x: 0, y: 0 }); }
@@ -148,10 +148,10 @@ export default function Hero() {
                 key={i}
                 className={styles.orb}
                 style={{
-                  '--orb-delay':    `${i * -1.5}s`,
+                  '--orb-delay': `${i * -1.5}s`,
                   '--orb-duration': `${7 + i * 0.8}s`,
-                  '--orb-radius':   i % 2 === 0 ? '130px' : '165px',
-                  '--orb-start':    `${i * 60}deg`,
+                  '--orb-radius': i % 2 === 0 ? '130px' : '165px',
+                  '--orb-start': `${i * 60}deg`,
                 }}
               >
                 {orb}
