@@ -29,11 +29,11 @@ export const academicItems = [
 export const certifications = [
   {
     id: 1,
-    badge: '🎓 Harvard University',
+    badge: '🎓 Harvard University - Fundação Estudar',
     badgeType: 'harvard',
-    title: 'Harvard Medical School / CS50 — Ciência da Computação & Pesquisa Aplicada',
+    title: 'CC50: Introdução à Ciência da Computação - O Curso de Harvard, no Brasil.',
     issuer: 'Harvard University — EUA · Brigham and Women\'s Hospital',
-    detail: '2022 – 2023 · Harvard Medical School & BWH (pesquisa internacional) + CCSO/CS50 em português (70h) · C, Python, Algoritmos, Web.',
+    detail: '2022 – 2023 · CCSO/CS50 em português · C, Python, Algoritmos, Web.',
   },
   {
     id: 2,
@@ -134,14 +134,6 @@ export const chemCourses = [
 ];
 
 export const chemCertifications = [
-  {
-    id: 1,
-    badge: '🎓 Harvard University',
-    badgeType: 'harvard',
-    title: 'Harvard Medical School / CS50 — Pesquisa Aplicada & Ciência',
-    issuer: 'Harvard University — EUA · Brigham and Women\'s Hospital',
-    detail: '2022 – 2023 · Programa internacional de inovação em saúde e ciência + CCSO/CS50 em português (70h).',
-  },
   {
     id: 2,
     badge: '⚙️ ISO Multipadrão',
