@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTheme } from '../../context/ThemeContext';
 import { useActiveSection } from '../../hooks/useActiveSection';
-import { scrollToSection } from '../../utils/index';
 import styles from './Navbar.module.css';
 
 const TECH_LINKS = [
@@ -67,15 +66,6 @@ export default function Navbar() {
     return () => window.removeEventListener('resize', h);
   }, []);
 
-  function handleNavClick(id) {
-    if (menuOpen) {
-      setMenuOpen(false);
-      setTimeout(() => scrollToSection(id), 50);
-    } else {
-      scrollToSection(id);
-    }
-  }
-
   const isChem = mode === 'chem';
   const navLinks = isChem ? CHEM_LINKS : TECH_LINKS;
 
@@ -95,10 +85,9 @@ export default function Navbar() {
         <div className={`container ${styles.inner}`}>
           {/* Logo */}
           <a
+            href="#hero"
             className={styles.logo}
-            onClick={() => handleNavClick('hero')}
-            role="button"
-            tabIndex={0}
+            onClick={() => setMenuOpen(false)}
           >
             {isChem ? <>Lucas<span>.chem</span></> : <>Lucas<span>.dev</span></>}
           </a>
@@ -107,9 +96,9 @@ export default function Navbar() {
           <ul className={styles.links}>
             {navLinks.map(link => (
               <li key={link.id}>
-                <button
+                <a
+                  href={`#${link.id}`}
                   className={`${styles.link} ${activeSection === link.id ? styles.active : ''}`}
-                  onClick={() => handleNavClick(link.id)}
                 >
                   {link.label}
                   {activeSection === link.id && (
@@ -119,7 +108,7 @@ export default function Navbar() {
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
-                </button>
+                </a>
               </li>
             ))}
           </ul>
@@ -154,19 +143,20 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{    opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              transition={{ duration: 0.25, ease: 'easeInOut' }}
             >
               {navLinks.map((link, i) => (
-                <motion.button
+                <motion.a
                   key={link.id}
+                  href={`#${link.id}`}
                   className={`${styles.mobileLink} ${activeSection === link.id ? styles.mobileActive : ''}`}
-                  onClick={() => handleNavClick(link.id)}
+                  onClick={() => setMenuOpen(false)}
                   initial={{ opacity: 0, x: -16 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.06 }}
                 >
                   {link.label}
-                </motion.button>
+                </motion.a>
               ))}
             </motion.div>
           )}

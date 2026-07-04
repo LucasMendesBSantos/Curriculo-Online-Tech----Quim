@@ -65,21 +65,20 @@
 
 .link {
   position: relative;
-  background: none;
-  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
   font-family: var(--font-sans);
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--text-200);
+  text-decoration: none;
   padding: 8px 14px;
   border-radius: var(--r-md);
   cursor: pointer;
   touch-action: manipulation;
   transition: color var(--t), background var(--t);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
 }
 .link:hover { color: var(--accent); background: var(--accent-soft); }
 .link.active { color: var(--accent); }
@@ -163,12 +162,12 @@
 }
 
 .mobileLink {
-  background: none;
-  border: none;
+  display: block;
   font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-200);
+  text-decoration: none;
   padding: 14px 16px;
   border-radius: var(--r-md);
   text-align: left;
