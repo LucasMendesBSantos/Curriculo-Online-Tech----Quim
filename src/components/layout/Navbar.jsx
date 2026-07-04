@@ -68,8 +68,12 @@ export default function Navbar() {
   }, []);
 
   function handleNavClick(id) {
-    setMenuOpen(false);
-    scrollToSection(id);
+    if (menuOpen) {
+      setMenuOpen(false);
+      setTimeout(() => scrollToSection(id), 50);
+    } else {
+      scrollToSection(id);
+    }
   }
 
   const isChem = mode === 'chem';
