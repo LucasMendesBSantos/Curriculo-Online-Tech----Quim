@@ -6,6 +6,7 @@ import Skills        from './components/sections/Skills';
 import Experience    from './components/sections/Experience';
 import Education     from './components/sections/Education';
 import Publications  from './components/sections/Publications';
+import Certifications from './components/sections/Certifications';
 import Contact       from './components/sections/Contact';
 import ParticlesCanvas from './components/ui/ParticlesCanvas';
 import BackToTop     from './components/ui/BackToTop';
@@ -26,6 +27,7 @@ function AppContent() {
         <Experience />
         <Education />
         {isChem && <Publications />}
+        {!isChem && <Certifications />}
         <Contact />
       </main>
 
