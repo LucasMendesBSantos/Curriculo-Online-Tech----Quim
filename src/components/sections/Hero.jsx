@@ -9,14 +9,14 @@ import profileChem from '../../assets/profile-chem.png';
 import styles from './Hero.module.css';
 
 const TECH_ROLES = [
-  'Cientista da Computação',
+  'Cientista da Computação - UECE',
   'Desenvolvedor Full Stack',
   'Químico',
   'Engenheiro de Prompts',
 ];
 
 const CHEM_ROLES = [
-  'Químico',
+  'Químico - UECE',
   'Assistente Químico',
   'Auditor ISO',
   'Black Belt Lean Six Sigma',
@@ -54,7 +54,14 @@ export default function Hero() {
   const orbs = isChem ? CHEM_ORBS : TECH_ORBS;
   const stats = isChem ? CHEM_STATS : TECH_STATS;
 
-  const typed = useTypewriter(roles);
+  const { text: typed, word } = useTypewriter(
+    roles,
+    isChem ? { typeSpeed: 55, deleteSpeed: 35, pauseMs: 1200 } : undefined
+  );
+  const suffixStart = word.indexOf(' - ');
+  const splitAt = suffixStart === -1 ? typed.length : suffixStart;
+  const typedMain = typed.slice(0, splitAt);
+  const typedSuffix = typed.slice(splitAt);
   const cardRef = useRef(null);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
@@ -102,8 +109,8 @@ export default function Hero() {
             </motion.h1>
 
             <motion.div className={styles.typewriterWrap} variants={itemVariants}>
-              <span className={styles.typewriterLabel}>I&apos;m a&nbsp;</span>
-              <span className={styles.typewriterText}>{typed}</span>
+              <span className={styles.typewriterText}>{typedMain}</span>
+              {typedSuffix && <span className={styles.typewriterSuffix}>{typedSuffix}</span>}
               <span className={styles.cursor} />
             </motion.div>
 

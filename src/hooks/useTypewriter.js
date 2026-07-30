@@ -32,5 +32,5 @@ export function useTypewriter(words, { typeSpeed = 95, deleteSpeed = 55, pauseMs
     return () => clearTimeout(timeoutRef.current);
   }, [displayed, deleting, wordIdx, words, typeSpeed, deleteSpeed, pauseMs]);
 
-  return displayed;
+  return { text: displayed, word: words[wordIdx] };
 }

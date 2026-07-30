@@ -82,11 +82,13 @@
   flex-wrap: wrap;
 }
 
-.typewriterLabel { color: var(--text-300); margin-right: 6px; }
-
 .typewriterText {
   color: var(--accent);
   text-shadow: 0 0 20px var(--accent-glow);
+}
+
+.typewriterSuffix {
+  color: var(--text-300);
 }
 
 .cursor {

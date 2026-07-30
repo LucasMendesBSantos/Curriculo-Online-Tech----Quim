@@ -5,11 +5,12 @@ import { useActiveSection } from '../../hooks/useActiveSection';
 import styles from './Navbar.module.css';
 
 const TECH_LINKS = [
-  { id: 'hero',       label: 'Início'       },
-  { id: 'skills',     label: 'Skills'       },
-  { id: 'experience', label: 'Experiência'  },
-  { id: 'education',  label: 'Formação'     },
-  { id: 'contact',    label: 'Contato'      },
+  { id: 'hero',           label: 'Início'         },
+  { id: 'skills',         label: 'Skills'         },
+  { id: 'experience',     label: 'Experiência'    },
+  { id: 'education',      label: 'Formação'       },
+  { id: 'certifications', label: 'Certificações'  },
+  { id: 'contact',        label: 'Contato'        },
 ];
 
 const CHEM_LINKS = [
@@ -21,7 +22,7 @@ const CHEM_LINKS = [
   { id: 'contact',      label: 'Contato'      },
 ];
 
-const ALL_SECTION_IDS = ['hero', 'skills', 'experience', 'education', 'publications', 'contact'];
+const ALL_SECTION_IDS = ['hero', 'skills', 'experience', 'education', 'publications', 'certifications', 'contact'];
 
 /* Ícone do botão de alternância:
    modo Tech  → mostra ⚗️  (clica para ir para Química)
