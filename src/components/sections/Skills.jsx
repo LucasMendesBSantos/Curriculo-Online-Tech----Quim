@@ -16,6 +16,33 @@ export default function Skills() {
   const currentTab = categories.find(c => c.id === activeTab) ?? categories[0];
   const safeActiveTab = categories.some(c => c.id === activeTab) ? activeTab : categories[0].id;
 
+  const flattenSkills = cat => cat.skills ?? cat.groups.flatMap(g => g.skills);
+
+  const renderCard = (skill, i) => (
+    <motion.div
+      key={skill.name}
+      className={styles.card}
+      initial={{ opacity: 0, scale: 0.88, y: 20 }}
+      animate={{ opacity: 1, scale: 1,    y: 0  }}
+      transition={{ delay: i * 0.07, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{ y: -6, scale: 1.04 }}
+    >
+      <div className={styles.cardTop}>
+        <span className={styles.cardIcon}>{skill.icon}</span>
+        <span className={styles.cardName}>{skill.name}</span>
+        <span className={styles.cardLevel}>{skill.level}%</span>
+      </div>
+      <div className={styles.barTrack}>
+        <motion.div
+          className={styles.barFill}
+          initial={{ width: 0 }}
+          animate={{ width: `${skill.level}%` }}
+          transition={{ duration: 0.8, delay: i * 0.07 + 0.2, ease: 'easeOut' }}
+        />
+      </div>
+    </motion.div>
+  );
+
   return (
     <section className={`section section--alt ${styles.skills}`} id="skills">
       <div className="container">
@@ -53,36 +80,25 @@ export default function Skills() {
         <AnimatePresence mode="wait">
           <motion.div
             key={`${mode}-${safeActiveTab}`}
-            className={styles.grid}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{    opacity: 0, y: -20 }}
             transition={{ duration: 0.35, ease: 'easeInOut' }}
           >
-            {currentTab.skills.map((skill, i) => (
-              <motion.div
-                key={skill.name}
-                className={styles.card}
-                initial={{ opacity: 0, scale: 0.88, y: 20 }}
-                animate={{ opacity: 1, scale: 1,    y: 0  }}
-                transition={{ delay: i * 0.07, duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                whileHover={{ y: -6, scale: 1.04 }}
-              >
-                <div className={styles.cardTop}>
-                  <span className={styles.cardIcon}>{skill.icon}</span>
-                  <span className={styles.cardName}>{skill.name}</span>
-                  <span className={styles.cardLevel}>{skill.level}%</span>
+            {currentTab.groups ? (
+              currentTab.groups.map(group => (
+                <div key={group.title} className={styles.groupBlock}>
+                  <p className={styles.groupTitle}>{group.title}</p>
+                  <div className={styles.grid}>
+                    {group.skills.map((skill, i) => renderCard(skill, i))}
+                  </div>
                 </div>
-                <div className={styles.barTrack}>
-                  <motion.div
-                    className={styles.barFill}
-                    initial={{ width: 0 }}
-                    animate={{ width: `${skill.level}%` }}
-                    transition={{ duration: 0.8, delay: i * 0.07 + 0.2, ease: 'easeOut' }}
-                  />
-                </div>
-              </motion.div>
-            ))}
+              ))
+            ) : (
+              <div className={styles.grid}>
+                {currentTab.skills.map((skill, i) => renderCard(skill, i))}
+              </div>
+            )}
           </motion.div>
         </AnimatePresence>
 
@@ -91,7 +107,7 @@ export default function Skills() {
           <div className={styles.allSection}>
             <p className={styles.allTitle}>Todas as competências</p>
             <div className={styles.allChips}>
-              {categories.flatMap(cat => cat.skills).map(skill => (
+              {categories.flatMap(flattenSkills).map(skill => (
                 <motion.span
                   key={`${mode}-${skill.name}`}
                   className={styles.chip}
