@@ -35,17 +35,6 @@ export const skillCategories = [
     ],
   },
   {
-    id: 'other',
-    label: 'Outros',
-    icon: '🌟',
-    skills: [
-      { name: 'Manutenção de Hardware', icon: '🔩', level: 88 },
-      { name: 'Engenharia de Prompts',  icon: '🤖', level: 90 },
-      { name: 'IA Generativa',          icon: '🧠', level: 80 },
-      { name: 'Química',                icon: '⚗️', level: 84 },
-    ],
-  },
-  {
     id: 'cybersec',
     label: 'Cibersegurança & SOC',
     icon: '🛡️',
@@ -78,6 +67,17 @@ export const skillCategories = [
           { name: 'Mapeamento de Ameaças (MITRE ATT&CK & Cyber Kill Chain)', icon: '🗺️', level: 85 },
         ],
       },
+    ],
+  },
+  {
+    id: 'other',
+    label: 'Outros',
+    icon: '🌟',
+    skills: [
+      { name: 'Manutenção de Hardware', icon: '🔩', level: 88 },
+      { name: 'Engenharia de Prompts',  icon: '🤖', level: 90 },
+      { name: 'IA Generativa',          icon: '🧠', level: 80 },
+      { name: 'Química',                icon: '⚗️', level: 84 },
     ],
   },
 ];
