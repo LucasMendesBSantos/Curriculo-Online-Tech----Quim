@@ -11,6 +11,8 @@ export const skillCategories = [
       { name: 'Java',       icon: '☕', level: 72 },
       { name: 'JavaScript', icon: '🟨', level: 90 },
       { name: 'Python',     icon: '🐍', level: 88 },
+      { name: 'Kotlin',     icon: '🟠', level: 74 },
+      { name: 'Dart',       icon: '🎯', level: 70 },
     ],
   },
   {
@@ -24,6 +26,8 @@ export const skillCategories = [
       { name: 'Angular',      icon: '🅰️', level: 88 },
       { name: 'Bootstrap',    icon: '🅱️', level: 88 },
       { name: 'Tailwind CSS', icon: '💨', level: 80 },
+      { name: 'Flutter',      icon: '🦋', level: 72 },
+      { name: 'Android (Kotlin/Java)', icon: '📱', level: 74 },
     ],
   },
   {
@@ -42,6 +46,7 @@ export const skillCategories = [
       { name: 'Azure',      icon: '🌩️', level: 70 },
       { name: 'Docker',     icon: '🐳', level: 80 },
       { name: 'Kubernetes', icon: '☸️', level: 65 },
+      { name: 'Firebase',   icon: '🔥', level: 76 },
     ],
   },
   {
