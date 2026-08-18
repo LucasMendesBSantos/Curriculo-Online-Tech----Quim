@@ -39,6 +39,9 @@ export const skillCategories = [
       { name: 'PostgreSQL', icon: '🐘', level: 72 },
       { name: 'SQLite',     icon: '🗃️', level: 76 },
       { name: 'AWS',        icon: '☁️', level: 65 },
+      { name: 'Azure',      icon: '🌩️', level: 70 },
+      { name: 'Docker',     icon: '🐳', level: 80 },
+      { name: 'Kubernetes', icon: '☸️', level: 65 },
     ],
   },
   {
@@ -86,6 +89,8 @@ export const skillCategories = [
       { name: 'IA Generativa',          icon: '🧠', level: 80 },
       { name: 'Ciência de Dados',       icon: '📊', level: 72 },
       { name: 'Química',                icon: '⚗️', level: 84 },
+      { name: 'Git / GitHub',           icon: '🐙', level: 90 },
+      { name: 'n8n',                    icon: '🔗', level: 75 },
     ],
   },
 ];
