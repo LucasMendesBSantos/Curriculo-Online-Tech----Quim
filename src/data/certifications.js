@@ -20,6 +20,10 @@ const FILENAME_OVERRIDES = {
     { title: "WGESAD'25", issuer: 'Certificado de Participação' },
   'Formação Cientista de Dados O Curso Completo 2026_page-0001.jpg':
     { title: 'Formação Cientista de Dados', issuer: 'O Curso Completo 2026' },
+  'Desenvolvimento Android Completo - Kotlin & Java_page-0001.jpg':
+    { title: 'Desenvolvimento Android Completo - Kotlin & Java', issuer: 'Udemy' },
+  'Aprenda Flutter e Desenvolva Apps Para Android e IOS_page-0001.jpg':
+    { title: 'Aprenda Flutter e Desenvolva Apps Para Android e IOS', issuer: 'Udemy' },
 };
 
 // "#" não pode aparecer no nome do arquivo (quebra a resolução de URL do bundler),
