@@ -38,6 +38,7 @@ export default function Certifications() {
     <section className={`section ${styles.certSection}`} id="certifications">
       <div className="container">
         <SectionHeader
+          compact
           tag="Qualificações"
           title="Minhas"
           titleAccent="Certificações"

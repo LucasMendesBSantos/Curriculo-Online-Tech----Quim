@@ -1,10 +1,10 @@
 import ScrollReveal from './ScrollReveal';
 import styles from './SectionHeader.module.css';
 
-export default function SectionHeader({ tag, title, titleAccent, subtitle }) {
+export default function SectionHeader({ tag, title, titleAccent, subtitle, compact = false }) {
   return (
     <ScrollReveal>
-      <div className={styles.header}>
+      <div className={`${styles.header} ${compact ? styles.headerCompact : ''}`}>
         {tag && <span className={styles.tag}>{tag}</span>}
         <h2 className={styles.title}>
           {title}{' '}
