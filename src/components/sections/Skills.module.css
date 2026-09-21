@@ -43,6 +43,18 @@
   margin-bottom: 60px;
 }
 
+/* Grupos dentro de uma aba (ex.: Cibersegurança & SOC) */
+.groupBlock { margin-bottom: 12px; }
+
+.groupTitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
 /* Skill card */
 .card {
   background: var(--bg-card);
