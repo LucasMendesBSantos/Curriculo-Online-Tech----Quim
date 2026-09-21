@@ -2,6 +2,12 @@
   margin-bottom: 64px;
 }
 
+.headerCompact {
+  margin-bottom: 24px;
+}
+.headerCompact .tag { margin-bottom: 10px; }
+.headerCompact .title { margin-bottom: 8px; }
+
 .tag {
   display: inline-flex;
   align-items: center;

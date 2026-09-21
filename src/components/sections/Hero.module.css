@@ -244,15 +244,9 @@
   bottom: -24px;
   left: 50%;
   transform: translateX(-50%);
-  background: var(--bg-card);
-  border: 1px solid var(--border-2);
-  border-radius: var(--r-xl);
-  padding: 10px 20px;
   display: flex;
   gap: 16px;
-  box-shadow: var(--shadow-md), 0 0 24px var(--accent-glow);
   white-space: nowrap;
-  backdrop-filter: blur(10px);
   z-index: 2;
 }
 
@@ -260,23 +254,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-lg);
+  padding: 6px;
+  box-shadow: var(--shadow-md), 0 0 24px var(--accent-glow);
+  backdrop-filter: blur(10px);
   cursor: pointer;
+  transition: transform var(--t);
+}
+.medalItem:hover,
+.medalItem:focus-visible {
+  transform: translateY(-8px) scale(1.6);
+  z-index: 3;
 }
 
 .medalImg {
   width: 48px;
   height: 48px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px var(--accent-glow));
-  transition: transform var(--t);
-}
-.medalItem:hover .medalImg,
-.medalItem:focus-visible .medalImg {
-  transform: translateY(-8px) scale(1.6);
-}
-.medalItem:hover,
-.medalItem:focus-visible {
-  z-index: 3;
+  display: block;
 }
 
 /* Scroll indicator */
