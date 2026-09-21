@@ -36,8 +36,8 @@ export default function Education() {
       <div className="container">
         <SectionHeader
           tag="Conhecimento Acadêmico"
-          title="Formação &"
-          titleAccent="Certificações"
+          title="Formações e"
+          titleAccent="Cursos"
           subtitle={
             isChem
               ? 'Formação em Química combinada com certificações de qualidade e pesquisa de nível mundial.'
@@ -81,7 +81,7 @@ export default function Education() {
           <div>
             <ScrollReveal>
               <div className={styles.colTitle}>
-                <span>🏆</span> Certificações de Destaque
+                <span>🏆</span> Cursos de Curta Duração
               </div>
             </ScrollReveal>
 
