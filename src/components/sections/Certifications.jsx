@@ -71,7 +71,9 @@ export default function Certifications() {
                   exit={{ opacity: 0, x: -direction * 50 }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 >
-                  <img src={current.src} alt={current.title} className={styles.image} loading="lazy" />
+                  <div className={styles.imageWrap}>
+                    <img src={current.src} alt={current.title} className={styles.image} loading="lazy" />
+                  </div>
                   <figcaption className={styles.caption}>
                     <span className={styles.captionTitle}>{current.title}</span>
                     {current.issuer && <span className={styles.captionIssuer}>{current.issuer}</span>}
