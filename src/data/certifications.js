@@ -20,10 +20,16 @@ const FILENAME_OVERRIDES = {
     { title: "WGESAD'25", issuer: 'Certificado de Participação' },
   'Formação Cientista de Dados O Curso Completo 2026_page-0001.jpg':
     { title: 'Formação Cientista de Dados', issuer: 'O Curso Completo 2026' },
-  'Desenvolvimento Android Completo - Kotlin & Java_page-0001.jpg':
-    { title: 'Desenvolvimento Android Completo - Kotlin & Java', issuer: 'Udemy' },
-  'Aprenda Flutter e Desenvolva Apps Para Android e IOS_page-0001.jpg':
-    { title: 'Aprenda Flutter e Desenvolva Apps Para Android e IOS', issuer: 'Udemy' },
+  'Cloud Security Fundamentals Palo Alto_page-0001.jpg':
+    { title: 'Cloud Security Fundamentals', issuer: 'Palo Alto Networks' },
+  'Cybersecurity Fundamentals Paloalto networks_page-0001.jpg':
+    { title: 'Cybersecurity Fundamentals', issuer: 'Palo Alto Networks' },
+  'Network Security Fundamentals Palo Alto_page-0001.jpg':
+    { title: 'Network Security Fundamentals', issuer: 'Palo Alto Networks' },
+  'Security Operations Fundamentals Palo Alto_page-0001.jpg':
+    { title: 'Security Operations Fundamentals', issuer: 'Palo Alto Networks' },
+  'Certificado sensibilização para segurança digital_page-0001.jpg':
+    { title: 'Sensibilização para Segurança Digital', issuer: '' },
 };
 
 // "#" não pode aparecer no nome do arquivo (quebra a resolução de URL do bundler),

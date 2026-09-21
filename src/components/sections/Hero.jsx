@@ -6,6 +6,7 @@ import { scrollToSection } from '../../utils/index';
 import Button from '../ui/Button';
 import profileTech from '../../assets/profile.jpg';
 import profileChem from '../../assets/profile-chem.png';
+import { medals } from '../../data/medals';
 import styles from './Hero.module.css';
 
 const TECH_ROLES = [
@@ -24,12 +25,6 @@ const CHEM_ROLES = [
 
 const TECH_ORBS = ['⚛️', '🟨', '🌐', '🟢', '⚙️', '🎨'];
 const CHEM_ORBS = ['⚗️', '🔬', '🧪', '⚡', '🧬', '📊'];
-
-const TECH_STATS = [
-  { num: '4+', label: 'Projetos' },
-  { num: '15+', label: 'Skills' },
-  { num: '2+', label: 'Anos' },
-];
 
 const CHEM_STATS = [
   { num: '4', label: 'ISO Normas' },
@@ -52,7 +47,7 @@ export default function Hero() {
 
   const roles = isChem ? CHEM_ROLES : TECH_ROLES;
   const orbs = isChem ? CHEM_ORBS : TECH_ORBS;
-  const stats = isChem ? CHEM_STATS : TECH_STATS;
+  const stats = CHEM_STATS;
 
   const { text: typed, word } = useTypewriter(
     roles,
@@ -186,19 +181,34 @@ export default function Hero() {
               />
             </motion.div>
 
-            <motion.div
-              className={styles.statsCard}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 0.6 }}
-            >
-              {stats.map(s => (
-                <div key={s.label} className={styles.statItem}>
-                  <span className={styles.statNum}>{s.num}</span>
-                  <span className={styles.statLabel}>{s.label}</span>
-                </div>
-              ))}
-            </motion.div>
+            {isChem ? (
+              <motion.div
+                className={styles.statsCard}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+              >
+                {stats.map(s => (
+                  <div key={s.label} className={styles.statItem}>
+                    <span className={styles.statNum}>{s.num}</span>
+                    <span className={styles.statLabel}>{s.label}</span>
+                  </div>
+                ))}
+              </motion.div>
+            ) : (
+              <motion.div
+                className={styles.medalsCard}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 0.6 }}
+              >
+                {medals.map(medal => (
+                  <div key={medal.id} className={styles.medalItem} title={medal.title}>
+                    <img src={medal.src} alt={medal.title} className={styles.medalImg} />
+                  </div>
+                ))}
+              </motion.div>
+            )}
           </motion.div>
 
         </div>
