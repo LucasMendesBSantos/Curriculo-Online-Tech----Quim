@@ -260,6 +260,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 
 .medalImg {
@@ -269,8 +270,13 @@
   filter: drop-shadow(0 2px 6px var(--accent-glow));
   transition: transform var(--t);
 }
-.medalItem:hover .medalImg {
-  transform: translateY(-3px) scale(1.08);
+.medalItem:hover .medalImg,
+.medalItem:focus-visible .medalImg {
+  transform: translateY(-8px) scale(1.6);
+}
+.medalItem:hover,
+.medalItem:focus-visible {
+  z-index: 3;
 }
 
 /* Scroll indicator */

@@ -203,9 +203,22 @@ export default function Hero() {
                 transition={{ delay: 0.8, duration: 0.6 }}
               >
                 {medals.map(medal => (
-                  <div key={medal.id} className={styles.medalItem} title={medal.title}>
-                    <img src={medal.src} alt={medal.title} className={styles.medalImg} />
-                  </div>
+                  medal.url ? (
+                    <a
+                      key={medal.id}
+                      href={medal.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.medalItem}
+                      title={medal.title}
+                    >
+                      <img src={medal.src} alt={medal.title} className={styles.medalImg} />
+                    </a>
+                  ) : (
+                    <div key={medal.id} className={styles.medalItem} title={medal.title}>
+                      <img src={medal.src} alt={medal.title} className={styles.medalImg} />
+                    </div>
+                  )
                 ))}
               </motion.div>
             )}
