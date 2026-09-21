@@ -28,6 +28,8 @@ const FILENAME_OVERRIDES = {
     { title: 'Network Security Fundamentals', issuer: 'Palo Alto Networks' },
   'Security Operations Fundamentals Palo Alto_page-0001.jpg':
     { title: 'Security Operations Fundamentals', issuer: 'Palo Alto Networks' },
+  'Certificado sensibilização para segurança digital_page-0001.jpg':
+    { title: 'Sensibilização para Segurança Digital', issuer: '' },
 };
 
 // "#" não pode aparecer no nome do arquivo (quebra a resolução de URL do bundler),

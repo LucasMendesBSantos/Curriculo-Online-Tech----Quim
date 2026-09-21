@@ -238,6 +238,41 @@
   letter-spacing: 0.08em;
 }
 
+/* Medalhas flutuantes */
+.medalsCard {
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border: 1px solid var(--border-2);
+  border-radius: var(--r-xl);
+  padding: 10px 20px;
+  display: flex;
+  gap: 16px;
+  box-shadow: var(--shadow-md), 0 0 24px var(--accent-glow);
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  z-index: 2;
+}
+
+.medalItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.medalImg {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 6px var(--accent-glow));
+  transition: transform var(--t);
+}
+.medalItem:hover .medalImg {
+  transform: translateY(-3px) scale(1.08);
+}
+
 /* Scroll indicator */
 .scrollIndicator {
   position: absolute;
@@ -291,7 +326,8 @@
   }
 
   /* statsCard sai do absolute e entra no fluxo normal */
-  .statsCard {
+  .statsCard,
+  .medalsCard {
     position: relative;
     bottom: unset;
     left: unset;
@@ -319,6 +355,8 @@
   .statsCard  { gap: 14px; padding: 10px 16px; }
   .statNum    { font-size: 1.2rem; }
   .statLabel  { font-size: 0.62rem; }
+  .medalsCard { gap: 12px; padding: 8px 14px; }
+  .medalImg   { width: 40px; height: 40px; }
 }
 
 /* Smartphone pequeno */
@@ -331,6 +369,8 @@
   .statsCard  { gap: 10px; padding: 8px 14px; }
   .statNum    { font-size: 1.1rem; }
   .statLabel  { font-size: 0.6rem; }
+  .medalsCard { gap: 10px; padding: 8px 12px; }
+  .medalImg   { width: 36px; height: 36px; }
 }
 
 /* Tela muito pequena (ex: Galaxy Fold, 320px) */
@@ -338,4 +378,6 @@
   .photoCard  { width: 160px; height: 200px; }
   .name       { font-size: clamp(1.9rem, 8vw, 2.4rem); }
   .statsCard  { gap: 8px; padding: 8px 10px; }
+  .medalsCard { gap: 8px; padding: 8px 10px; }
+  .medalImg   { width: 32px; height: 32px; }
 }
