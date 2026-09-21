@@ -19,6 +19,12 @@
   border: 1px solid var(--border-1);
   height: min(42vh, 400px);
   display: flex;
+  transition: height 0.35s ease, box-shadow 0.35s ease;
+}
+.viewport:hover {
+  height: min(56vh, 480px);
+  box-shadow: var(--shadow-md), 0 0 30px var(--accent-glow);
+  z-index: 5;
 }
 
 .slide {
@@ -29,22 +35,13 @@
   flex-direction: column;
 }
 
-.imageWrap {
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow: hidden;
-  background: var(--bg-1);
-}
-
 .image {
   display: block;
   width: 100%;
-  height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
   object-fit: contain;
-  transition: transform 0.35s ease;
-}
-.imageWrap:hover .image {
-  transform: scale(1.15);
+  background: var(--bg-1);
 }
 
 .caption {
