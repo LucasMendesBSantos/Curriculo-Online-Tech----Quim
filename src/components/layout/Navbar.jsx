@@ -49,6 +49,17 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [hoveringModeBtn, setHoveringModeBtn] = useState(false);
+  const [autoPeek, setAutoPeek] = useState(false);
+  const showModeTip = hoveringModeBtn || autoPeek;
+
+  // Mostra a dica automaticamente por alguns segundos ao carregar,
+  // para sinalizar que o botão é clicável mesmo sem hover (ex: mobile)
+  useEffect(() => {
+    const showTimer = setTimeout(() => setAutoPeek(true), 1200);
+    const hideTimer = setTimeout(() => setAutoPeek(false), 5200);
+    return () => { clearTimeout(showTimer); clearTimeout(hideTimer); };
+  }, []);
 
   useEffect(() => {
     function onScroll() {
@@ -116,15 +127,37 @@ export default function Navbar() {
 
           {/* Actions */}
           <div className={styles.actions}>
-            <motion.button
-              className={styles.themeBtn}
-              onClick={toggleMode}
-              whileHover={{ scale: 1.12, rotate: 8 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="Alternar modo"
-            >
-              <ModeIcon mode={mode} />
-            </motion.button>
+            <div className={styles.themeBtnWrapper}>
+              <span className={styles.pulseRing} aria-hidden="true" />
+
+              <motion.button
+                className={styles.themeBtn}
+                onClick={toggleMode}
+                onHoverStart={() => setHoveringModeBtn(true)}
+                onHoverEnd={() => setHoveringModeBtn(false)}
+                onFocus={() => setHoveringModeBtn(true)}
+                onBlur={() => setHoveringModeBtn(false)}
+                whileHover={{ scale: 1.12, rotate: 8 }}
+                whileTap={{ scale: 0.9 }}
+                aria-label="Alternar modo"
+              >
+                <ModeIcon mode={mode} />
+              </motion.button>
+
+              <AnimatePresence>
+                {showModeTip && (
+                  <motion.span
+                    className={styles.themeTooltip}
+                    initial={{ opacity: 0, y: 6, scale: 0.9 }}
+                    animate={{ opacity: 1, y: [6, -3, 0], scale: 1 }}
+                    exit={{ opacity: 0, y: 6, scale: 0.9 }}
+                    transition={{ duration: 0.35, ease: 'easeOut' }}
+                  >
+                    {isChem ? 'Clique aqui para Dev' : 'Clique aqui para Quimico'}
+                  </motion.span>
+                )}
+              </AnimatePresence>
+            </div>
 
             <button
               className={`${styles.hamburger} ${menuOpen ? styles.open : ''}`}
