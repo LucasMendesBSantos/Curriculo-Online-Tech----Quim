@@ -20,6 +20,14 @@ const FILENAME_OVERRIDES = {
     { title: "WGESAD'25", issuer: 'Certificado de Participação' },
   'Formação Cientista de Dados O Curso Completo 2026_page-0001.jpg':
     { title: 'Formação Cientista de Dados', issuer: 'O Curso Completo 2026' },
+  'Cloud Security Fundamentals Palo Alto_page-0001.jpg':
+    { title: 'Cloud Security Fundamentals', issuer: 'Palo Alto Networks' },
+  'Cybersecurity Fundamentals Paloalto networks_page-0001.jpg':
+    { title: 'Cybersecurity Fundamentals', issuer: 'Palo Alto Networks' },
+  'Network Security Fundamentals Palo Alto_page-0001.jpg':
+    { title: 'Network Security Fundamentals', issuer: 'Palo Alto Networks' },
+  'Security Operations Fundamentals Palo Alto_page-0001.jpg':
+    { title: 'Security Operations Fundamentals', issuer: 'Palo Alto Networks' },
 };
 
 // "#" não pode aparecer no nome do arquivo (quebra a resolução de URL do bundler),
