@@ -1,16 +1,79 @@
-# React + Vite
+# 🎓 Currículo Online — Tech & Química
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfólio pessoal interativo de **Lucas Mendes Brito dos Santos**, com um diferencial: um único site que alterna entre duas identidades profissionais — **Desenvolvedor Full Stack** e **Assistente/Auditor Químico** — com um toggle de tema que muda paleta de cores, conteúdo e até o currículo em PDF disponível para download.
 
-Currently, two official plugins are available:
+🔗 **Acesse:** [lucasmendessdev](https://lucasmendessdev.vercel.app) <!-- ajuste para a URL real do deploy -->
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Destaques
 
-## React Compiler
+- **Dois modos, um só site** — alterne entre o tema `tech` (azul) e `chem` (verde) e veja skills, experiências e o PDF do currículo se adaptarem ao contexto.
+- **Seções sob medida para cada área** — Certificações técnicas no modo Tech, Publicações/Auditorias no modo Química.
+- **Visual vivo** — fundo com partículas animadas, efeito de digitação no Hero, reveal on-scroll e microinterações com Framer Motion.
+- **Currículo em PDF** — download do currículo correspondente ao modo ativo, direto pelo botão de contato.
+- **QR Code de contato** para compartilhamento rápido do perfil.
+- **Preferência persistida** — o tema escolhido fica salvo no `localStorage`.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧩 Seções do site
 
-## Expanding the ESLint configuration
+| Seção | Descrição |
+|---|---|
+| Hero | Apresentação, efeito de digitação e CTA de contato |
+| Skills | Habilidades técnicas ou competências químicas, conforme o modo |
+| Experience | Trajetória profissional |
+| Education | Formação acadêmica |
+| Certifications *(modo Tech)* | Galeria de certificados (AWS, .NET, Java, Python, Palo Alto, etc.) |
+| Publications *(modo Química)* | Publicações e auditorias |
+| Contact | E-mails, WhatsApp, redes sociais e download do currículo em PDF |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Stack
+
+- [React 19](https://react.dev/) + [Vite](https://vitejs.dev/)
+- [Framer Motion](https://www.framer.com/motion/) — animações e transições
+- [qrcode.react](https://github.com/zpao/qrcode.react) — geração do QR Code
+- CSS Modules + variáveis CSS para theming
+- ESLint para padronização de código
+- Deploy na [Vercel](https://vercel.com/)
+
+## 🚀 Rodando localmente
+
+```bash
+# instalar dependências
+npm install
+
+# ambiente de desenvolvimento
+npm run dev
+
+# build de produção
+npm run build
+
+# preview do build
+npm run preview
+
+# lint
+npm run lint
+```
+
+## 📁 Estrutura do projeto
+
+```
+src/
+├── components/
+│   ├── layout/       # Navbar, Footer
+│   ├── sections/     # Hero, Skills, Experience, Education, Publications, Certifications, Contact
+│   ├── ui/           # Button, ParticlesCanvas, ScrollReveal, BackToTop, SocialLogos...
+│   └── Certifications/ # imagens dos certificados
+├── context/          # ThemeContext (tech ⇄ chem)
+├── data/             # conteúdo (skills, experience, education, certifications, contact...)
+├── hooks/            # useActiveSection, useScrollReveal, useTypewriter
+└── styles/           # variáveis e animações CSS globais
+```
+
+## 📬 Contato
+
+- **E-mail:** lucasmendessdev@gmail.com
+- **LinkedIn:** [lucas-mendes-brito](https://www.linkedin.com/in/lucas-mendes-brito-b87ab8199/)
+- **GitHub:** [LucasMendesBrito](https://github.com/LucasMendesBrito)
+
+---
+
+Feito com <_> e um pouco de 🧪 por mim (Lucas Mendes).
