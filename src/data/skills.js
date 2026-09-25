@@ -5,8 +5,8 @@ export const skillCategories = [
     label: 'Linguagens',
     icon: '🖥️',
     skills: [
-      { name: 'C',          icon: '⚙️', level: 75 },
-      { name: 'C++',        icon: '⚙️', level: 70 },
+      { name: 'C',          icon: '⚙️', level: 85 },
+      { name: 'C++',        icon: '⚙️', level: 85 },
       { name: 'C#',         icon: '🔷', level: 88 },
       { name: 'Java',       icon: '☕', level: 72 },
       { name: 'JavaScript', icon: '🟨', level: 90 },

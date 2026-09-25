@@ -6,6 +6,13 @@ import { useTheme } from '../../context/ThemeContext';
 import { skillCategories, chemSkillCategories } from '../../data/skills';
 import styles from './Skills.module.css';
 
+// Converte o nível numérico (0–100) em uma faixa qualitativa
+const getLevelTier = level => {
+  if (level >= 85) return { label: 'Avançado',      width: 100 };
+  if (level >= 70) return { label: 'Intermediário', width: 66 };
+  return                  { label: 'Iniciante',     width: 33 };
+};
+
 export default function Skills() {
   const { mode } = useTheme();
   const isChem = mode === 'chem';
@@ -18,7 +25,9 @@ export default function Skills() {
 
   const flattenSkills = cat => cat.skills ?? cat.groups.flatMap(g => g.skills);
 
-  const renderCard = (skill, i) => (
+  const renderCard = (skill, i) => {
+    const tier = getLevelTier(skill.level);
+    return (
     <motion.div
       key={skill.name}
       className={styles.card}
@@ -30,18 +39,19 @@ export default function Skills() {
       <div className={styles.cardTop}>
         <span className={styles.cardIcon}>{skill.icon}</span>
         <span className={styles.cardName}>{skill.name}</span>
-        <span className={styles.cardLevel}>{skill.level}%</span>
+        <span className={styles.cardLevel}>{tier.label}</span>
       </div>
       <div className={styles.barTrack}>
         <motion.div
           className={styles.barFill}
           initial={{ width: 0 }}
-          animate={{ width: `${skill.level}%` }}
+          animate={{ width: `${tier.width}%` }}
           transition={{ duration: 0.8, delay: i * 0.07 + 0.2, ease: 'easeOut' }}
         />
       </div>
     </motion.div>
-  );
+    );
+  };
 
   return (
     <section className={`section section--alt ${styles.skills}`} id="skills">
